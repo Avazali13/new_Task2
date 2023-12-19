@@ -16,13 +16,25 @@
   .main {
     display: flex;
     justify-content: space-between;
-    padding: 2rem;
+    // padding: 8px 8px ;
+    height: 56px;
+    align-items: center;
+    font-size: $bs-navbar-brand-font-size;
+   
     .logo-nav {
       display: flex;
       gap: 3.4rem;
+      a{
+        color: $bs-navbar-brand-color;
+      }
+      
       .nav_list {
         display: flex;
         gap: 1.5rem;
+        
+      a{
+        color: $bs-nav-link-color;
+      }
       }
     }
     .button {
@@ -30,9 +42,25 @@
       gap: 1.4rem;
       padding: 0.5rem;
       border-radius: $main-border-radius;
+     p{
+      padding-top: 3px;
+     }
+     i{
+      padding-top: 3px;
+     }
       &:hover {
         background-color: $main-color;
         color: white;
+      }
+      .wishlist{
+       border-radius: $bs-border-radius-pill;
+       background-color: $bs-navbar-brand-color ;
+       color: #fff;
+       width: 22.5px;
+       height: 20.4px;
+      //  margin-bottom: 5px;
+       padding: 2.2px;
+    
       }
     }
   }
@@ -45,32 +73,75 @@
   justify-content: center;
   color: white;
   height: 300px;
+margin-bottom: 48px;
   .banner {
     text-align: center;
+
+    &_desc{
+      color: $bs-banner-desk;
+      font-size: 1.25rem;
+    }
     &_title {
       margin-bottom: 1rem;
+      font-size: 3.5rem;
     }
   }
 }
 
 #shop {
+  padding: 48px 0px;
+  border-radius: $main2-border-radius;
+  padding-bottom: 24px;
+  .cards{
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+gap: 48px;
+  }
   .card {
-    width: calc(85% / 4);
-
+    width: calc(85%/4);
+    border: $bs-card-border-width solid $bs-card-border-color;
     gap: 5%;
-    background-color: red;
+    margin-bottom: 3rem !important;
+
+  
+
     &_image {
       width: 100%;
-      height: 200px;
+      height: 178px;
     }
     &_content {
       display: flex;
       flex-direction: column;
       align-items: center;
+      height: 194px;
+      padding-top: 15px;
+      h5{
+        font-size: 1.25rem;
+        line-height: 1.2;
+        font-family: $bs-font-sans-serif;
+        color: #212529;
+      }
+      span{
+        font-size: 1.1rem
+      }
 
       &_button {
-        @include button(200px, 30px, white, $main-border-radius);
+        @include button(120px, 38px, white, $main2-border-radius);
+        margin-top: 75px;
+        
+       
       }
     }
   }
+}
+
+footer{
+ height: 24px;
+ padding: 48px 0px;
+ background-color: $bs-dark-rgb;
+ text-align: center;
+ color: $bs-white-rgb;
+ font-size: 1rem;
 }
