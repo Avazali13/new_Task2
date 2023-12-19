@@ -1,0 +1,76 @@
+@import "reset";
+@import "variable";
+
+@mixin button($width, $height, $bg-color, $border-radius,) {
+  background-color: $bg-color;
+  width: $width;
+  height: $height;
+  border-radius: $border-radius;
+  &:hover {
+    background-color: $main-color;
+    color: white;
+  }
+}
+
+#header {
+  .main {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    .logo-nav {
+      display: flex;
+      gap: 3.4rem;
+      .nav_list {
+        display: flex;
+        gap: 1.5rem;
+      }
+    }
+    .button {
+      display: flex;
+      gap: 1.4rem;
+      padding: 0.5rem;
+      border-radius: $main-border-radius;
+      &:hover {
+        background-color: $main-color;
+        color: white;
+      }
+    }
+  }
+}
+
+#hero {
+  background-color: $main-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 300px;
+  .banner {
+    text-align: center;
+    &_title {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+#shop {
+  .card {
+    width: calc(85% / 4);
+
+    gap: 5%;
+    background-color: red;
+    &_image {
+      width: 100%;
+      height: 200px;
+    }
+    &_content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &_button {
+        @include button(200px, 30px, white, $main-border-radius);
+      }
+    }
+  }
+}
